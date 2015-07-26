@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lovenotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="bookmark" href="favicon.ico">
+<!-- build:css css/main.css -->
+<link rel="stylesheet" href="css/index.css">
+<!-- endbuild -->
+<script>
+document.onreadystatechange = function(){
+	if(document.readyState == 'interactive'){
+		var loadingNode = document.getElementById('loading');
+		loadingNode.parentNode.removeChild(loadingNode);
+	}
+}
+window.onload = function(){}
+</script>
+</head>
+<body>
+<div id="loading">
+	<div class="heartbeat-loader">Loading…</div>
+</div>
+<div id="bg"></div>
+<div id="txtbox">
+<h1><span>念念<big>不忘</big>，</span><span>必有<big>回响</big>。</span></h1>
+<p>Met <em id="days"></em> days</p>
+<script>
+var oldDate = new Date(2014,5,23,0,0,0,0);
+var nowDate = new Date();
+var time = (+nowDate) - (+oldDate);
+var days = parseInt(Math.floor(time /1000/60/60/24)); //天
+document.getElementById('days').innerHTML = days;
+</script>
+</div>
+<footer id="author"><a href="http://lovenotes.me" title="Lovenotes">Lovenotes</a></footer>
+<div id="musicbox">
+	<div class="light"></div>
+	<div class="smallcircle"></div>
+	<audio id="music-elem" preload="preload" loop="loop">
+		<source src="assets/music/SunshineGirl.ogg" type="audio/ogg">
+  		<source src="assets/music/SunshineGirl.mp3" type="audio/mpeg">
+	</audio>
+</div>
+<!-- build:js js/main.min.js -->
+<script src="js/musiccontrol.js"></script>
+<!-- endbuild -->
+</body>
+</html>
