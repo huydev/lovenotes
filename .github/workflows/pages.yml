@@ -15,8 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: sterlingwes/gh-pages-deploy-action@v1.1
-        with: sterlingwes/gh-pages-deploy-action@v1.1
-        source-directory: dist
-        build-command: yarn build
-        custom-domain: lovenotes.me
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          source-directory: dist
+          build-command: yarn build
+          custom-domain: lovenotes.me
 
